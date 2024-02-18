@@ -2,13 +2,13 @@ POST http://127.0.0.1:8081/userActionList
 Content-type: application/json; charset=utf-8
 
 [
-  {"message_id": "11", "user_id": "us1", "action_type": 2},
-  {"message_id": "12", "user_id": "us1", "action_type": 2},
-  {"message_id": "41", "user_id": "us4", "action_type": 1},
-  {"message_id": "42", "user_id": "us4", "action_type": 1},
-  {"message_id": "43", "user_id": "us4", "action_type": 1},
-  {"message_id": "13", "user_id": "us1", "action_type": 2},
-  {"message_id": "14", "user_id": "us1", "action_type": 2}
+  {"message_id": "11", "user_id": "1", "action_type": 2},
+  {"message_id": "12", "user_id": "1", "action_type": 2},
+  {"message_id": "41", "user_id": "2", "action_type": 1},
+  {"message_id": "42", "user_id": "2", "action_type": 1},
+  {"message_id": "43", "user_id": "2", "action_type": 1},
+  {"message_id": "13", "user_id": "3", "action_type": 2},
+  {"message_id": "14", "user_id": "3", "action_type": 2}
 ]
 
 ###
@@ -17,8 +17,9 @@ POST http://127.0.0.1:8081/userActionList
 Content-type: application/json; charset=utf-8
 
 [
-  {"message_id": "15", "user_id": "us1", "action_type": 2},
-  {"message_id": "16", "user_id": "us1", "action_type": 2}
+  {"message_id": "999", "user_id": "1", "action_type": 2},
+  {"message_id": "1000", "user_id": "2", "action_type": 2},
+  {"message_id": "1001", "user_id": "3", "action_type": 2}
 ]
 
 ###
