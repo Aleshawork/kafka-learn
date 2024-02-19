@@ -1,0 +1,2 @@
+docker exec -it broker kafka-topics --delete --topic mytopic --bootstrap-server localhost:9092
+docker exec -it broker kafka-topics --create --topic mytopic --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1

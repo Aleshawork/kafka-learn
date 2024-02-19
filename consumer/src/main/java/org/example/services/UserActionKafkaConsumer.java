@@ -1,8 +1,11 @@
-package org.example;
+package org.example.services;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.example.KafkaProperties;
+import org.example.UserAction;
+import org.example.config.WorkerProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -82,7 +85,10 @@ public class UserActionKafkaConsumer {
     private void processMessages(ConsumerRecords<String, UserAction> consumerRecords) throws InterruptedException {
         Iterable<ConsumerRecord<String, UserAction>> iterable = () -> consumerRecords.iterator();
 
-        StreamSupport.stream(iterable.spliterator(), false).forEach(cr ->log.info("Key:{}", cr.key()));
+        log.info(
+                "Обработка набора сообщений из partition: {}",
+                StreamSupport.stream(iterable.spliterator(), false).map(ConsumerRecord::partition).collect(Collectors.toSet())
+        );
 
         Map<String, List<UserAction>> taskMap = StreamSupport.stream(iterable.spliterator(), false).map(ConsumerRecord::value)
                 .filter(Objects::nonNull)
