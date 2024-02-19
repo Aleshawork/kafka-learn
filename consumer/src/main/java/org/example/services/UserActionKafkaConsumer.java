@@ -63,15 +63,20 @@ public class UserActionKafkaConsumer {
 
     void runConsumer() {
             consumer.subscribe(List.of(properties.getTopic()));
+            boolean isHasNewMessages = false;
             while (exitFlag) {
-                log.info("Получение сообщения от брокера");
+
                 final ConsumerRecords<String,UserAction> consumerRecords = consumer.poll(Duration.ofMillis(5000));
+                isHasNewMessages = !consumerRecords.isEmpty();
+
                 boolean messageProcessingNotFinished = false;
                 do {
                     try {
-                        log.info("Start of processing received messages! Received: {}", consumerRecords.count());
-                        processMessages(consumerRecords);
-                        messageProcessingNotFinished = false;
+                        if (isHasNewMessages) {
+                            log.info("Start of processing received messages! Received: {}", consumerRecords.count());
+                            processMessages(consumerRecords);
+                            messageProcessingNotFinished = false;
+                        }
                     } catch (Exception ex) {
                         messageProcessingNotFinished = true;
                         log.error("Error in processing !");
