@@ -39,7 +39,7 @@ services:
       SERVER_PORT: 8080
       BOOTSTRAP_SERVER: 'broker:9092'
       TOPIC_NAME: 'mytopic'
-      CONSUMER_GROUP: 'KafkaConsumer1'
+      CONSUMER_GROUP: 'c-group-1'
     depends_on:
       - broker
     networks:
@@ -54,7 +54,7 @@ services:
       SERVER_PORT: 8084
       BOOTSTRAP_SERVER: 'broker:9092'
       TOPIC_NAME: 'mytopic'
-      CONSUMER_GROUP: 'KafkaConsumer1'
+      CONSUMER_GROUP: 'c-group-1'
     depends_on:
       - broker
     networks:
@@ -69,7 +69,7 @@ services:
       SERVER_PORT: 8085
       BOOTSTRAP_SERVER: 'broker:9092'
       TOPIC_NAME: 'mytopic'
-      CONSUMER_GROUP: 'KafkaConsumer1'
+      CONSUMER_GROUP: 'c-group-1'
     depends_on:
       - broker
     networks:

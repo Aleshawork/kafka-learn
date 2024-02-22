@@ -16,6 +16,8 @@ public class KafkaProperties {
     private String producerName;
     private String consumerGroupId;
     private String topic;
+    private String acsk;
+    private String enabledIdidempotence;
 
     public String getTopic() {
         return topic;
@@ -49,4 +51,19 @@ public class KafkaProperties {
         this.consumerGroupId = consumerGroupId;
     }
 
+    public String getAcsk() {
+        return acsk;
+    }
+
+    public void setAcsk(String acsk) {
+        this.acsk = acsk;
+    }
+
+    public String getEnabledIdidempotence() {
+        return enabledIdidempotence;
+    }
+
+    public void setEnabledIdidempotence(String enabledIdidempotence) {
+        this.enabledIdidempotence = enabledIdidempotence;
+    }
 }
