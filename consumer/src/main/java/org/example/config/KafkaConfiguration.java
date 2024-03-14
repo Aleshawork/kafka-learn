@@ -6,7 +6,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.example.KafkaProperties;
 import org.example.UserAction;
-import org.example.UserActionDeserializer;
+import org.example.services.UserActionDeserializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

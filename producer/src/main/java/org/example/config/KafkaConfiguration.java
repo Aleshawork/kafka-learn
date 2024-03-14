@@ -22,6 +22,9 @@ public class KafkaConfiguration {
         props.put(ProducerConfig.CLIENT_ID_CONFIG, properties.getProducerName());
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, CustomByNumberPartitioner.class);
+        props.put(ProducerConfig.ENABLE_IDEMPOTENCE_DOC, properties.getAcsk());
+        props.put(ProducerConfig.ENABLE_IDEMPOTENCE_DOC, properties.getAcsk());
+        props.put(ProducerConfig.ENABLE_IDEMPOTENCE_DOC, properties.getEnabledIdidempotence());
         return new KafkaProducer<>(props, null, userActionSerializer);
     }
 

@@ -17,9 +17,10 @@ POST http://127.0.0.1:8081/userActionList
 Content-type: application/json; charset=utf-8
 
 [
-  {"message_id": "999", "user_id": "1", "action_type": 2},
-  {"message_id": "1000", "user_id": "2", "action_type": 2},
-  {"message_id": "1001", "user_id": "3", "action_type": 2}
+  {"message_id": "1006", "user_id": "1", "action_type": 2},
+  {"message_id": "1007", "user_id": "2", "action_type": 2},
+  {"message_id": "1008", "user_id": "3", "action_type": 2},
+  {"message_id": "1009", "user_id": "4", "action_type": 2}
 ]
 
 ###
